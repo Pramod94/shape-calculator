@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shape Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="calBorder">
+      <form>
+        <h3 id="heading">Step 1 : Select your shape</h3>
+        <p id="subHeading1">
+          Please select the shape that you would like to calculate the area of
+          and press the button "Go to step 2"
+        </p>
+        <p id="subHeading2" style="display: none">
+          You have selected a <b id="selectedShape"></b> , please input the
+          required variables.
+        </p>
+        <p id="subHeading3" style="display: none">
+          You have calculated the area of a <b id="selectedShape1"></b> with <b id="val1"></b> & <b id="val2"></b>. Below is your result:
+        </p>
+        <div id="shapeTypes">
+          <div>
+            <input
+              type="radio"
+              id="rec"
+              name="shape"
+              value="rectangle"
+              checked="true"
+            />
+            <label>Rectangle</label>
+          </div>
+          <div>
+            <input type="radio" id="cir" name="shape" value="circle" />
+            <label>Circle</label>
+          </div>
+          <div>
+            <input type="radio" name="shape" value="square" />
+            <label>Square</label>
+          </div>
+          <div>
+            <input type="radio" name="shape" value="ellipse" />
+            <label>Ellipse</label>
+          </div>
+          <div>
+            <button type="button" onclick="getShapeVal()">Go to Step 2</button>
+            <span onclick="window.location.reload()">or Cancel</span>
+          </div>
+        </div>
+        <div id="step2" style="display: none">
+          <div>
+            <span id="shapeValText"></span> <input type="text" id="shapeVal1" />
+          </div>
+          <div id="secondInput" style="display: none">
+            <span id="shapeValText2"></span>
+            <input type="text" id="shapeVal2" />
+          </div>
+          <button type="button" onclick="goToStep3()">Go to Step 3</button>
+          <span onclick="window.location.reload()">or Cancel</span>
+        </div>
+        <br />
+        <b id="result" style="display: none"> </b>
+        <br />
+        <button
+          id="startOver"
+          type="button"
+          style="display: none"
+          onclick="window.location.reload()"
+        >
+          Start Over
+        </button>
+      </form>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
